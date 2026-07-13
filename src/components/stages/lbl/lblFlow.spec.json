@@ -1,0 +1,54 @@
+{
+  "grid": { "rowGap": "lg", "columnGap": "sm" },
+  "rows": [
+    {
+      "span": true,
+      "cells": [
+        {
+          "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+          "children": ["corpusPanel", { "lossSlot": true }]
+        }
+      ]
+    },
+    {
+      "span": true,
+      "cells": [
+        {
+          "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+          "children": ["ePanel", "wPanel", "bPanel"]
+        }
+      ]
+    },
+    {
+      "span": true,
+      "cells": [
+        {
+          "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+          "children": ["xPanel", { "arrow": "x·W+b" }, "softmaxPanel"]
+        }
+      ]
+    },
+    {
+      "span": true,
+      "cells": [
+        {
+          "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+          "children": [
+            "gradientPanel",
+            { "arrow": "x⊗(p−y)" }, "dWWorkingPanel",
+            { "arrow": "W·(p−y), scatter → ∇E" }, "dEPanel"
+          ]
+        }
+      ]
+    },
+    {
+      "span": true,
+      "cells": [
+        {
+          "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+          "children": ["dbWorkingPanel", "eAfterPanel", "wAfterPanel", "bAfterPanel"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* "prev → next" token-chip row above the component table. */
+.pairRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+  color: var(--c-text-secondary);
+}
+
+.dimLabel {
+  color: var(--c-text-muted);
+}
+
+/* The logit cell, clickable to open the worked-out dot product in a modal.
+   The dotted hint uses text-decoration (not a border) so it adds no box height
+   and rows stay aligned with the neighbouring E,U table. */
+.logitButton {
+  all: unset;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-decoration-color: var(--c-border-default);
+  text-underline-offset: 2px;
+}
+
+.logitButton:hover,
+.logitButton:focus-visible {
+  text-decoration-color: var(--c-text-primary);
+}
+
+/* The component-by-component working shown inside the modal. */
+.workingBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Footer summing the component products to the logit. */
+.logitFooter {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-top: var(--space-xs);
+  border-top: 1px solid var(--c-border-default);
+}
+
+.logitFooterLabel {
+  font-size: var(--font-size-sm);
+  color: var(--c-text-muted);
+}
+
+.logitValue {
+  font-size: var(--font-size-base);
+}

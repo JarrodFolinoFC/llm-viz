@@ -1,0 +1,47 @@
+/* A pure-JavaScript aside next to a data panel. Same commentary surface as the
+   plain-English ConceptNote — soft info background, stage-tinted left accent —
+   but the body is a code block, not prose. */
+.note {
+  align-self: center;
+  box-sizing: border-box;
+  max-width: 44ch;
+  padding: var(--space-sm);
+  background: var(--c-info-bg);
+  border: 1px solid var(--c-info-border);
+  border-inline-start: 3px solid var(--c-info-border);
+  border-radius: var(--radius-md);
+  color: var(--c-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+  color: var(--c-text-emphasis);
+  font-weight: 600;
+}
+
+.icon {
+  display: block;
+  color: var(--c-text-muted);
+}
+
+.code {
+  margin: 0;
+  overflow-x: auto;
+  font-family: monospace;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+/* On mobile the flow collapses to one column; let the note fill the width
+   rather than sitting at its narrow reading measure. */
+@media (max-width: 991px) {
+  .note {
+    max-width: none;
+    align-self: stretch;
+  }
+}

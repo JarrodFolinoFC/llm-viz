@@ -1,0 +1,34 @@
+{
+  "grid": { "rowGap": "lg", "columnGap": "sm" },
+  "rows": [
+    {
+      "span": true,
+      "cells": [
+        {
+          "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+          "children": ["corpusPanel", { "lossSlot": true }]
+        }
+      ]
+    },
+    { "cells": ["wPanel", "historyPanel"] },
+    {
+      "span": true,
+      "cells": [
+        {
+          "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+          "children": ["prevSoftmaxPanel", "rowSoftmaxPanel"]
+        }
+      ]
+    },
+    {
+      "span": true,
+      "cells": [
+        {
+          "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+          "children": ["gradientUpdatePanel"]
+        }
+      ]
+    },
+    { "cells": ["newWPanel"] }
+  ]
+}

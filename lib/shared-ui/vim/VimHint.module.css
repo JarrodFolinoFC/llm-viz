@@ -1,0 +1,132 @@
+/* Central vim-hint tokens (tunable in one place). Colours derive from the app
+   theme so hints work in light and dark; literal fallbacks keep them legible in
+   apps that don't mount the ThemeProvider. */
+:root {
+  --vim-hint-size: 11px;
+  --vim-hint-accent: var(--c-link, #2563eb);
+  --vim-hint-on-accent: #fff;
+  /* Faint chip behind a lit label: a translucent tint of the label's own colour,
+     so it lifts the letters off the control while blending into either theme.
+     (In browsers without color-mix the var is invalid → no background, i.e. the
+     previous bare-letters look, which is a fine fallback.) */
+  --vim-hint-faint-bg: color-mix(in srgb, currentColor 14%, transparent);
+}
+
+/* ── slot: reserved but invisible ──────────────────────────────────────────
+   Holds the width for two characters so toggling hint mode never reflows the
+   layout, but renders nothing at rest. When lit, the letters just appear in the
+   control's own text colour — no coloured pill — so they read as *part of* the
+   button/link, in the space beside the label. */
+.slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 1.5em;
+  height: 1.3em;
+  padding: 0 2px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--vim-hint-size);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: middle;
+  color: inherit;
+}
+
+/* ── slot-end: fixed-width trailing keycap ─────────────────────────────────
+   Same look as `.slot`, but a *fixed* width (wide enough for two characters)
+   rather than a min-width that grows when the label lights up. A fixed box means
+   toggling hint mode can never change the button's width, so an icon sitting
+   before it (the ⋮ action-menu glyph) never shifts. A rare 3-char label just
+   overflows the box (centred) without resizing it. */
+.slotEnd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 1.9em;
+  height: 1.3em;
+  padding: 0 2px;
+  overflow: visible;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--vim-hint-size);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: middle;
+  color: inherit;
+}
+
+/* When a slot is lit (has letters) it carries the faint chip; at rest the kbd is
+   empty, so `:not(:empty)` keeps it invisible and the reserved box unchanged —
+   the background appears without any reflow. */
+.slot:not(:empty),
+.slotEnd:not(:empty) {
+  background: var(--vim-hint-faint-bg);
+  border-radius: 4px;
+}
+
+/* ── overlay: letters centered over an icon-like host ──────────────────────
+   No box, no scrim — the host hides its glyph interior and frames the space, so
+   these letters read as the icon's content. Inherits colour for light/dark. */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: inherit;
+  pointer-events: none;
+}
+
+/* ── floating placements (corner / inline): a quiet pill, hint-mode only ──── */
+.badge {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(20, 22, 28, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  padding: 2px 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.corner {
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  z-index: 2;
+}
+
+.inline {
+  margin-right: 0.35em;
+  vertical-align: 1px;
+}
+
+/* The portion of the label already typed — dimmed but readable. */
+.typed {
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slot {
+    transition: none;
+  }
+}

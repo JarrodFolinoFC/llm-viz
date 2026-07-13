@@ -1,0 +1,11 @@
+/* Let the rendered SVG scale to the panel width. */
+.diagram {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.diagram :global(svg) {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,12 @@
+/* Muted helper / placeholder line inside a panel. */
+.hint {
+  color: var(--c-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* Same, but captioning content rendered directly below it. */
+.hintCaption {
+  margin-bottom: var(--space-xs);
+  color: var(--c-text-secondary);
+  font-size: var(--font-size-sm);
+}

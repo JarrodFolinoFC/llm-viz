@@ -1,0 +1,28 @@
+{
+  "flex": { "vertical": true, "gap": "lg" },
+  "children": [
+    { "flex": { "wrap": true, "gap": "sm", "align": "stretch" }, "children": ["corpusPanel"] },
+    {
+      "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+      "children": ["ePanel", "wxhPanel", "whhPanel", "bhPanel", "whyPanel", "byPanel"]
+    },
+    {
+      "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+      "children": ["hiddensPanel", { "arrow": "h_N·W_hy+b_y" }, "softmaxPanel"]
+    },
+    {
+      "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+      "children": [
+        "gradientPanel",
+        { "arrow": "h_N⊗(p−y)" }, "dWhyPanel",
+        { "arrow": "Σₜ xₜ⊗∇zₜ" }, "dWxhPanel",
+        { "arrow": "Σₜ hₜ₋₁⊗∇zₜ" }, "dWhhPanel",
+        { "arrow": "scatter → ∇E" }, "dEPanel"
+      ]
+    },
+    {
+      "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+      "children": ["wxhAfterPanel", "whhAfterPanel", "whyAfterPanel", "eAfterPanel"]
+    }
+  ]
+}

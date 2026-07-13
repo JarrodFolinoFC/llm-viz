@@ -1,0 +1,84 @@
+/* A theme-aware Segmented control that mirrors antd's look: a rounded track with
+   a raised "thumb" on the selected item. Colours come from the shared theme vars
+   (light + dark) with literal fallbacks. */
+.group {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 8px;
+  background: var(--c-bg-subtle, #f1f5f9);
+  font-size: 14px;
+}
+
+.block {
+  display: flex;
+  width: 100%;
+}
+
+.block .item {
+  flex: 1 1 0;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.large {
+  font-size: 16px;
+}
+
+.item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.9em;
+  padding: 2px 12px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--c-text-secondary, #475569);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.12s ease;
+}
+
+.small .item {
+  padding: 1px 8px;
+}
+
+.item:hover:not(.selected):not(.disabled) {
+  color: var(--c-text-primary, #0f172a);
+}
+
+/* The selected "thumb". */
+.selected {
+  background: var(--c-bg, #ffffff);
+  color: var(--c-text-primary, #0f172a);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Hint mode: fade the label (still readable) with the 2 letters centered over
+   it, so you know which segment you're triggering. */
+.label {
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.12s ease;
+}
+
+.dimLabel {
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item,
+  .label {
+    transition: none;
+  }
+}

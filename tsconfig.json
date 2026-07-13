@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
+    // The vendored libs under ./lib are consumed as source via these package-name
+    // mappings (mirrors resolve.alias in vite.config.ts). The `<pkg>/style.css`
+    // specifiers need no mapping: vite/client's `*.css` wildcard covers them.
+    "baseUrl": ".",
+    "paths": {
+      "mlblocks": ["./lib/mlblocks/index.ts"],
+      "mlblocks/core": ["./lib/mlblocks/core/index.ts"],
+      "mlblocks/react": ["./lib/mlblocks/react/index.ts"],
+      "shared-ui": ["./lib/shared-ui/index.ts"],
+      "vimium-layer": ["./lib/vimium-stub.ts"]
+    }
+  },
+  "include": ["src", "tests"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

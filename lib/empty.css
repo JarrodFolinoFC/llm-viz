@@ -1,0 +1,4 @@
+/* Stand-in for the vendored libs' built `style.css` bundles. When the libs are
+   consumed from source (see the aliases in vite.config.ts), their styles arrive
+   through each component's own CSS-module imports, so the bundle import resolves
+   to nothing. */

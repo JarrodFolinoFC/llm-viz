@@ -1,0 +1,16 @@
+/* Anchor the centred hint overlay (VimHint `overlay` is inset:0). */
+.wrap {
+  position: relative;
+}
+
+/* In hint mode the drop-area content fades so the centred 2-letter label reads
+   clearly on top — the same "dim the host, letters read as the content" move the
+   icon buttons make. */
+.content {
+  display: block;
+  transition: opacity 0.1s ease;
+}
+
+.dim {
+  opacity: 0.2;
+}

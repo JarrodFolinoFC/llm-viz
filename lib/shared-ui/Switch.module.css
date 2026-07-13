@@ -1,0 +1,20 @@
+/* Wrapper that anchors the centered letters over the switch. The switch keeps
+   its own shape (faded) in hint mode, with the letters inside it. */
+.wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dim {
+  opacity: 0.55;
+  transition: opacity 0.12s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrap,
+  .hide {
+    transition: none;
+  }
+}

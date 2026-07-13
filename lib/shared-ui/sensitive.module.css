@@ -1,0 +1,16 @@
+/* The blur mask applied by <Sensitive> when "Hide sensitive information" is on.
+   The wrapper is layout-neutral at rest (a bare span/div); only the filter and
+   the inert-selection rules switch on when blurred, so wrapping a value never
+   shifts it and un-hiding is a clean fade. */
+.sensitive {
+  transition: filter 0.12s ease;
+}
+
+.blurred {
+  filter: blur(6px);
+  /* Inert while hidden: the masked value can't be selected or copied, and the
+     cursor stays a plain arrow rather than a text caret. */
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
+}

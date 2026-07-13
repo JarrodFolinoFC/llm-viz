@@ -1,0 +1,19 @@
+{
+  "flex": { "vertical": true, "gap": "lg" },
+  "children": [
+    {
+      "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+      "children": ["corpusPanel", { "lossSlot": true }]
+    },
+    {
+      "flex": { "vertical": true, "gap": "sm", "className": "slices" },
+      "children": [
+        "slice0", "slice1", "slice2", "slice3",
+        "slice4", "slice5", "slice6", "slice7"
+      ]
+    },
+    { "flex": { "wrap": true, "gap": "sm", "align": "stretch" }, "children": ["softmaxPanel"] },
+    { "flex": { "wrap": true, "gap": "sm", "align": "stretch" }, "children": ["gradientPanel"] },
+    { "flex": { "wrap": true, "gap": "sm", "align": "stretch" }, "children": ["afterPanel"] }
+  ]
+}

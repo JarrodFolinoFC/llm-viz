@@ -1,0 +1,10 @@
+{
+  "flex": { "vertical": true, "gap": "lg" },
+  "children": [
+    { "flex": { "wrap": true, "gap": "sm", "align": "stretch" }, "children": ["corpusPanel"] },
+    { "flex": { "wrap": true, "gap": "sm", "align": "stretch" }, "children": ["pairBeforePanel", "scatterPanel"] },
+    { "flex": { "wrap": true, "gap": "sm", "align": "stretch" }, "children": ["dotProductPanel"] },
+    { "flex": { "wrap": true, "gap": "sm", "align": "stretch" }, "children": ["gradientPanel"] },
+    { "flex": { "wrap": true, "gap": "sm", "align": "stretch" }, "children": ["updatePanel", "pairAfterPanel"] }
+  ]
+}

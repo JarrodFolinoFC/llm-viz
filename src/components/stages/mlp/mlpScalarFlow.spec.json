@@ -1,0 +1,76 @@
+{
+  "grid": { "rowGap": "lg", "columnGap": "sm" },
+  "rows": [
+    {
+      "span": true,
+      "cells": [
+        {
+          "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+          "children": [
+            { "annotate": { "node": "corpusPanel", "key": "corpus" } },
+            { "annotate": { "node": { "lossSlot": true }, "key": "loss" } }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        { "annotate": { "node": "ePanel", "key": "embeddings", "dials": true } },
+        { "annotate": { "node": "w1Panel", "key": "w1", "dials": true } },
+        { "annotate": { "node": "b1Panel", "key": "b1", "dials": true } },
+        { "annotate": { "node": "w2Panel", "key": "w2", "dials": true } },
+        { "annotate": { "node": "b2Panel", "key": "b2", "dials": true } }
+      ]
+    },
+    {
+      "span": true,
+      "cells": [
+        {
+          "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+          "children": [
+            { "annotate": { "node": "preActivationPanel", "key": "preActivation" } },
+            { "arrow": "h·W₂+b₂" },
+            { "annotate": { "node": "softmaxPanel", "key": "softmax" } }
+          ]
+        }
+      ]
+    },
+    {
+      "span": true,
+      "cells": [
+        {
+          "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+          "children": [
+            { "annotate": { "node": "gradientPanel", "key": "gradient" } },
+            { "arrow": "h⊗(p−y)" },
+            { "annotate": { "node": "dW2Panel", "key": "dW2", "dials": true } },
+            { "arrow": "W₂·(p−y) · (1−h²)" },
+            { "annotate": { "node": "dz1Panel", "key": "dz1", "dials": true } },
+            { "arrow": "x⊗∇z₁" },
+            { "annotate": { "node": "dW1Panel", "key": "dW1", "dials": true } },
+            { "arrow": "scatter → ∇E" },
+            { "annotate": { "node": "dEPanel", "key": "dE", "dials": true } }
+          ]
+        }
+      ]
+    },
+    {
+      "span": true,
+      "cells": [
+        {
+          "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+          "children": ["embWorkingPanel", "w1WorkingPanel", "b1WorkingPanel", "w2WorkingPanel", "b2WorkingPanel"]
+        }
+      ]
+    },
+    {
+      "cells": [
+        { "annotate": { "node": "eAfterPanel", "key": "eAfter", "dials": true } },
+        { "annotate": { "node": "w1AfterPanel", "key": "w1After", "dials": true } },
+        { "annotate": { "node": "b1AfterPanel", "key": "b1After", "dials": true } },
+        { "annotate": { "node": "w2AfterPanel", "key": "w2After", "dials": true } },
+        { "annotate": { "node": "b2AfterPanel", "key": "b2After", "dials": true } }
+      ]
+    }
+  ]
+}

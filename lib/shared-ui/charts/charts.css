@@ -1,0 +1,155 @@
+/* Styles for the shared dependency-free SVG charts (Treemap, LineChart).
+   Previously duplicated in cost-control's and super-tracker's App.css. */
+
+.treemap,
+.linechart-wrap,
+.sunburst {
+  background: var(--c-bg-subtle);
+  border: 1px solid var(--c-border-default);
+  border-radius: 0.6rem;
+  padding: 1rem 1.1rem;
+}
+
+.treemap h3,
+.linechart h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.treemap-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.treemap-lbl {
+  fill: #0b1220;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.treemap-val {
+  fill: #0b1220;
+  font-size: 10px;
+  opacity: 0.8;
+  font-variant-numeric: tabular-nums;
+}
+
+.linechart .axis-lbl {
+  fill: var(--c-text-secondary);
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.line-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.line-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+}
+
+.line-legend .swatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 0.2rem;
+}
+
+/* Empty-state line inside a chart frame. */
+.treemap .muted,
+.linechart .muted,
+.sunburst .muted {
+  color: var(--c-text-secondary);
+  margin: 0;
+}
+
+/* Sunburst -------------------------------------------------------------- */
+.sunburst-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.sunburst-arc {
+  stroke: var(--c-bg-subtle);
+  stroke-width: 0.75;
+  transition: opacity 0.12s ease;
+}
+
+.sunburst-centre {
+  fill: var(--c-bg-subtle);
+  stroke: var(--c-border-default);
+  stroke-width: 1;
+}
+
+.sunburst-centre-name,
+.sunburst-centre-val,
+.sunburst-centre-pct {
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.sunburst-centre-name {
+  fill: var(--c-text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.sunburst-centre-val {
+  fill: var(--c-text-secondary);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.sunburst-centre-pct {
+  fill: var(--c-text-secondary);
+  font-size: 0.7rem;
+  opacity: 0.75;
+  font-variant-numeric: tabular-nums;
+}
+
+.sunburst-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.sunburst-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  max-width: 100%;
+}
+
+.sunburst-legend .swatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 0.2rem;
+  flex: none;
+}
+
+.sunburst-legend-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 12rem;
+}
+
+.sunburst-legend-val {
+  color: var(--c-text-secondary);
+  font-variant-numeric: tabular-nums;
+}

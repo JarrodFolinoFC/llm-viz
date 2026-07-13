@@ -1,0 +1,34 @@
+/* antd Button, laid out as a flex row so the reserved (invisible) vim-hint slot
+   leads the content with a consistent gap. The slot holds width for the two
+   letters so the button never reflows when hint mode toggles. */
+.hintable {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.4em;
+}
+
+/* Icon frame: just anchors the centered letters over the glyph. The icon keeps
+   its own shape (faded) in hint mode so you recognise what you're triggering,
+   with the letters inside it. */
+.iconFrame {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glyph {
+  display: inline-flex;
+  transition: opacity 0.12s ease;
+}
+
+.dimGlyph {
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconFrame,
+  .glyph {
+    transition: none;
+  }
+}

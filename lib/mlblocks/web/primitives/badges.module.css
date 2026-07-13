@@ -1,0 +1,35 @@
+/* Web rendering of the dot "icons" — the pulse animation is renderer-owned
+   (a native renderer would use Animated or a static dot). */
+.dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+.dotPulse {
+  /* Follows the badge colour, so a recoloured badge recolours the dot too. */
+  background: currentColor;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.dotHollow {
+  background: transparent;
+  border: 1.5px solid var(--c-text-muted);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dotPulse {
+    animation: none;
+  }
+}

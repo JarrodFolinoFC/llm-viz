@@ -1,0 +1,8 @@
+/* Mask-less floating dialog: the wrap swallows no clicks, the dialog does. */
+.detailWrap {
+  pointer-events: none;
+}
+
+.detailWrap :global(.ant-modal) {
+  pointer-events: auto;
+}

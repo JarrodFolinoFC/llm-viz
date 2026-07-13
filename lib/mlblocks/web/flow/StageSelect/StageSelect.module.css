@@ -1,0 +1,19 @@
+/* The stage-filter toolbar sitting at the top of a flow. */
+.bar {
+  margin-bottom: var(--space-md);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--c-text-secondary);
+  margin-right: var(--space-xs);
+}
+
+/* Thin separator between the per-stage toggles and the All / None shortcuts. */
+.divider {
+  align-self: stretch;
+  width: 1px;
+  margin: 0 var(--space-xs);
+  background: var(--c-border-default);
+}

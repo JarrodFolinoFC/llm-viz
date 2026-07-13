@@ -1,0 +1,9 @@
+version: "0.5"
+
+processes:
+  viz-frontend:
+    command: npm run dev
+    working_dir: .
+    availability:
+      restart: on_failure
+      backoff_seconds: 2

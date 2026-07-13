@@ -1,0 +1,58 @@
+/* Mobile-first: a single panel as a near-full-width bottom sheet, sitting above
+   the float buttons. Only one panel (trainer or console) is shown at a time. The
+   wrapper ignores pointer events so taps fall through its margins to the page;
+   the panel itself re-enables them. */
+.panels {
+  position: fixed;
+  left: var(--space-sm);
+  right: var(--space-sm);
+  bottom: 5.5rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-height: calc(100dvh - 7rem);
+  pointer-events: none;
+}
+
+.panel {
+  pointer-events: auto;
+  width: 100%;
+  max-height: calc(100dvh - 7rem);
+  overflow: auto;
+  background: var(--c-bg-surface);
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Console stays mounted (preserving its log) but is removed from view/layout. */
+.hidden {
+  display: none;
+}
+
+/* The trainer is just a few controls — it doesn't need the console's full width.
+   Right-align it as a compact strip (desktop width set in the media query below). */
+.trainerPanel {
+  align-self: flex-end;
+}
+
+/* Desktop: anchor bottom-right and give the panel far more room — a wide, tall
+   floating workspace rather than a phone sheet. */
+@media (min-width: 992px) {
+  .panels {
+    left: auto;
+    right: var(--space-xl);
+    bottom: 6rem;
+    width: 46rem;
+    max-width: calc(100vw - 3rem);
+    max-height: calc(100vh - 8rem);
+  }
+
+  .panel {
+    max-height: calc(100vh - 8rem);
+  }
+
+  .trainerPanel {
+    width: 26rem;
+  }
+}

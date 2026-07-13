@@ -1,0 +1,11 @@
+/* Lay the column title (antd's `.ant-table-column-sorters` wrapper) and the
+   reserved vim-hint slot out inline together, so the label reads as part of the
+   header — "Size ⭡ ab" — rather than being crammed against the sort arrow. The
+   slot reserves its width up front (invisible at rest), so entering hint mode
+   never reflows the header row. */
+.header {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+}

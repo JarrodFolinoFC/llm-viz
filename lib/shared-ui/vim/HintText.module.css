@@ -1,0 +1,14 @@
+/* The leading letters of a label that double as the vim keys: lit in the accent
+   so they read as "press these", while staying part of the word. */
+.key {
+  color: var(--vim-hint-accent, #2563eb);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+}
+
+/* The portion already typed — dimmed but still readable. */
+.typed {
+  opacity: 0.45;
+}

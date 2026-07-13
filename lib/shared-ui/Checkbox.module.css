@@ -1,0 +1,36 @@
+/* antd Checkbox wrapper. `position` anchors the letter overlay to the box; the
+   box is enlarged a touch so the 2 letters fit inside it. No reserved width. */
+.hintable {
+  position: relative;
+  align-items: center;
+}
+
+.hintable :global(.ant-checkbox-inner) {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+}
+
+/* While this box is the active hint target, keep its outline but clear the
+   fill/check, so the 2 letters inside read as the box's content — same "keep the
+   frame, hide the inside" idea as the icon hints. Light + dark safe. */
+.dim :global(.ant-checkbox-inner) {
+  background-color: transparent !important;
+}
+
+.dim :global(.ant-checkbox-inner)::after {
+  opacity: 0;
+}
+
+/* Pin the 2-letter overlay over the box (not the whole wrapper). The letters
+   inherit the row's text colour so they read on any theme. */
+.boxHint {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: inherit;
+}

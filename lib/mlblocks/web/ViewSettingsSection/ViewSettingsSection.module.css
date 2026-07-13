@@ -1,0 +1,33 @@
+/* The app's "View" section inside the Ctrl+S Settings panel. */
+.viewSettings {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--c-border-default);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.viewHeading {
+  font-size: var(--font-size-sm);
+  color: var(--c-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.viewField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.viewToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.viewLabel {
+  font-size: var(--font-size-sm);
+  color: var(--c-text-secondary);
+}

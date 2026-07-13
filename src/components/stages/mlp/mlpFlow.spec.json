@@ -1,0 +1,27 @@
+{
+  "flex": { "vertical": true, "gap": "lg" },
+  "children": [
+    {
+      "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+      "children": ["corpusPanel", "ePanel", "w1Panel", "b1Panel", "w2Panel", "b2Panel"]
+    },
+    {
+      "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+      "children": ["preActivationPanel", { "arrow": "h·W₂+b₂" }, "softmaxPanel"]
+    },
+    {
+      "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+      "children": [
+        "gradientPanel",
+        { "arrow": "h⊗(p−y)" }, "dW2Panel",
+        { "arrow": "W₂·(p−y) · (1−h²)" }, "dz1Panel",
+        { "arrow": "x⊗∇z₁" }, "dW1Panel",
+        { "arrow": "scatter → ∇E" }, "dEPanel"
+      ]
+    },
+    {
+      "flex": { "wrap": true, "gap": "sm", "align": "stretch" },
+      "children": ["eAfterPanel", "w1AfterPanel", "b1AfterPanel", "w2AfterPanel", "b2AfterPanel"]
+    }
+  ]
+}

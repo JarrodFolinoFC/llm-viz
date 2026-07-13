@@ -1,0 +1,83 @@
+/* Shared styling for the inference flow: the page wrapper + control bar and the
+   small Prediction / Generation panels. Uses the app's design-token CSS vars. */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.controls {
+  margin-bottom: var(--space-xs);
+}
+
+.label {
+  color: var(--c-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.select {
+  min-width: 7rem;
+}
+
+/* ── Decoding controls: temperature slider + greedy/sample switch ── */
+.temperatureSlider {
+  width: 9rem;
+  margin: 0 var(--space-xs);
+}
+
+.temperatureValue {
+  color: var(--c-text-secondary);
+  font-size: var(--font-size-sm);
+  font-variant-numeric: tabular-nums;
+  min-width: 4rem;
+}
+
+/* ── Pipeline: weights → softmax → prediction, with connectors ── */
+.pipeline {
+  align-items: stretch;
+}
+
+.connector {
+  display: flex;
+  align-items: center;
+  color: var(--c-text-muted);
+  font-size: 1.25rem;
+}
+
+.caption {
+  color: var(--c-text-secondary);
+  font-size: var(--font-size-sm);
+  margin: var(--space-sm) 0 0;
+}
+
+/* ── Prediction: a → predicted ── */
+.result {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.arrow {
+  color: var(--c-text-muted);
+}
+
+.prob {
+  color: var(--c-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* ── Generation chain ── */
+.chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}

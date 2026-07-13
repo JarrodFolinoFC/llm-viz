@@ -1,0 +1,122 @@
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.cheatsheet {
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.note {
+  color: var(--c-text-secondary);
+}
+
+.defs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.defBlock,
+.log {
+  margin: 0;
+  font-family: monospace;
+  font-size: var(--font-size-sm);
+  background: var(--c-bg-subtle);
+  border: 1px solid var(--c-border-default);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.log {
+  line-height: 1.5;
+  max-height: 30vh;
+  overflow-y: auto;
+}
+
+/* Desktop has a far taller panel — let the scrollback grow to match. */
+@media (min-width: 992px) {
+  .log {
+    max-height: 48vh;
+  }
+}
+
+.line {
+  margin: 0;
+}
+
+.prompt {
+  color: var(--c-text-muted);
+}
+
+.result {
+  color: var(--c-info-fg);
+}
+
+.error {
+  color: var(--c-error-fg);
+}
+
+.log .result,
+.log .error,
+.logTag {
+  display: inline;
+}
+
+.logTag {
+  color: var(--c-text-muted);
+}
+
+.controls {
+  font-size: var(--font-size-sm);
+}
+
+.inputRow {
+  display: flex;
+  gap: var(--space-xs);
+  align-items: flex-start;
+}
+
+.field {
+  font-family: monospace;
+}
+
+/* ── Prism syntax highlighting (token classes are global Prism output) ── */
+.code {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+.code :global(.token.keyword) {
+  color: var(--c-info-fg);
+  font-weight: 600;
+}
+.code :global(.token.function) {
+  color: var(--c-warning-fg);
+}
+.code :global(.token.number) {
+  color: var(--c-success-fg);
+}
+.code :global(.token.string),
+.code :global(.token.template-string) {
+  color: var(--c-positive);
+}
+.code :global(.token.operator),
+.code :global(.token.punctuation) {
+  color: var(--c-text-muted);
+}
+.code :global(.token.comment) {
+  color: var(--c-text-muted);
+  font-style: italic;
+}
+.code :global(.token.boolean),
+.code :global(.token.constant) {
+  color: var(--c-warning-fg);
+}

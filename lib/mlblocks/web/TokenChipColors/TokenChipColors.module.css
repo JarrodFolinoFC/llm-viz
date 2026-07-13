@@ -1,0 +1,20 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.heading {
+  font-size: var(--font-size-sm);
+  color: var(--c-text-secondary);
+}
+
+.mode {
+  color: var(--c-text-muted);
+  text-transform: capitalize;
+}
+
+/* Fixed-width preview slot so both chip rows line up their pickers. */
+.preview {
+  width: 3.5rem;
+}

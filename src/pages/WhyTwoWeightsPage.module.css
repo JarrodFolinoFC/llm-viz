@@ -1,0 +1,56 @@
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.codeCard {
+  margin-top: 24px;
+  border: 1px solid var(--c-border-default);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.codeHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--c-border-default);
+}
+
+.codeTitle {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.pre {
+  margin: 0;
+  padding: 12px 14px;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.output {
+  border-top: 1px solid var(--c-border-default);
+  padding: 12px 14px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.output p {
+  margin: 0;
+  white-space: pre;
+}
+
+.outLog {
+  color: var(--c-text-secondary, #888);
+}
+
+.outError {
+  color: #f87171;
+}

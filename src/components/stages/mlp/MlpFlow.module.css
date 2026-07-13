@@ -1,0 +1,27 @@
+/* One data panel stacked with its companion notes (plain English above, JS
+   below) as a single column cell. When the Panels filter leaves more than one
+   of them visible, frame the group with a subtle border so the trio reads as
+   one unit; a lone panel stays frameless (no visual change to the default). */
+.companionStack:has(> :nth-child(2)) {
+  padding: var(--space-sm);
+  border: 1px solid var(--c-border-default);
+  border-radius: var(--radius-md);
+}
+
+/* Stacked under/over their panel, the notes span the column instead of sitting
+   at their narrow side-car reading measure. */
+.companionStack > aside {
+  align-self: stretch;
+  max-width: none;
+}
+
+/* The notes must never widen the column past the data panel: zero intrinsic
+   width takes them out of the column's max-content sizing (the panel alone
+   sets it), then min-width stretches them back to that width — prose wraps,
+   JS code scrolls inside its own <pre>. Guarded on a non-aside sibling so a
+   companions-only stack (standard panels filtered out) keeps its own measure
+   rather than collapsing to zero. */
+.companionStack:has(> :not(aside)) > aside {
+  width: 0;
+  min-width: 100%;
+}

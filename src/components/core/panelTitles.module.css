@@ -1,0 +1,31 @@
+/* Shared panel-title layouts.
+
+   .title          a formula symbol followed by an optional muted phase suffix
+   .titleCentered  a formula paired with an inline Term / control
+   .phase          the muted suffix; sized in em so it tracks the panel size */
+.title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+}
+
+.titleCentered {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.phase {
+  color: var(--c-text-muted);
+  font-size: 0.85em;
+}
+
+/* "given <context chips>" caption — names the whole conditioning context once
+   in a panel title (the MLP softmax), in place of a per-row prev chip. */
+.given {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85em;
+  color: var(--c-text-muted);
+}

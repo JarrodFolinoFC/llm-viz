@@ -1,0 +1,18 @@
+/* Theme-aware link. Uses the shared palette vars where present, with literal
+   fallbacks so it stays legible in apps that don't mount the ThemeProvider. */
+.link {
+  color: var(--c-link, #0369a1);
+  text-decoration: none;
+  border-radius: 3px;
+  transition: color 0.15s ease;
+}
+
+.link:hover {
+  color: var(--c-link-hover, #0284c7);
+  text-decoration: underline;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--c-link, #0369a1);
+  outline-offset: 2px;
+}

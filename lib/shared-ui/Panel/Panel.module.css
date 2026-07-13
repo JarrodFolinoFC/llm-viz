@@ -1,0 +1,104 @@
+/* Header line: lets a badge/icon sit next to the title. */
+.titleBar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+/* The panel shell (an antd Card). */
+.panel {
+  min-width: 160px;
+  max-width: 100%;
+}
+
+.dimmed {
+  opacity: 0.4;
+  filter: grayscale(1);
+}
+
+/* On phones, let a panel shrink to the single-column width (overriding its
+   desktop min-width) so its content scrolls inside the panel instead of widening
+   the page. */
+@media (max-width: 991px) {
+  .panel:global(.ant-card) {
+    min-width: 0 !important;
+  }
+}
+
+/* Keep every panel's title bar the same height instead of fitting content. */
+.panel :global(.ant-card-head) {
+  display: flex;
+  align-items: center;
+}
+
+/* Centre the extra slot's control (the ⋮ menu) on its own box rather than the
+   inline text baseline — otherwise the button rides ~2px above the title. */
+.panel :global(.ant-card-extra) {
+  display: flex;
+  align-items: center;
+}
+
+/* Size variants: control title-bar height, padding, and font size.
+   xxs / xs are extra-compact, intended for mobile to fit more on screen. */
+.sizeXxs {
+  font-size: 9px;
+}
+.sizeXxs :global(.ant-card-head) {
+  min-height: 18px;
+  padding-inline: 3px;
+  font-size: 12px;
+}
+.sizeXxs :global(.ant-card-head-title) {
+  padding-block: 2px;
+}
+.sizeXxs :global(.ant-card-body) {
+  padding: 3px;
+}
+
+.sizeXs {
+  font-size: 11px;
+}
+.sizeXs :global(.ant-card-head) {
+  min-height: 28px;
+  padding-inline: 6px;
+  font-size: 16px;
+}
+.sizeXs :global(.ant-card-body) {
+  padding: 6px;
+}
+
+.sizeS {
+  font-size: 12px;
+}
+.sizeS :global(.ant-card-head) {
+  min-height: 32px;
+  padding-inline: 8px;
+  font-size: 17px;
+}
+.sizeS :global(.ant-card-body) {
+  padding: 8px;
+}
+
+.sizeM {
+  font-size: 14px;
+}
+.sizeM :global(.ant-card-head) {
+  min-height: 40px;
+  padding-inline: 12px;
+  font-size: 20px;
+}
+.sizeM :global(.ant-card-body) {
+  padding: 12px;
+}
+
+.sizeL {
+  font-size: 16px;
+}
+.sizeL :global(.ant-card-head) {
+  min-height: 52px;
+  padding-inline: 16px;
+  font-size: 24px;
+}
+.sizeL :global(.ant-card-body) {
+  padding: 16px;
+}

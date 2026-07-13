@@ -1,0 +1,234 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "cacert@latest": {
+      "last_modified": "2026-07-05T10:35:43Z",
+      "resolved": "github:NixOS/nixpkgs/c4013e501c048ae7c4a8940c92837636042bf6c3#cacert",
+      "source": "devbox-search",
+      "version": "3.123",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/xig2alhf611w1pan6n4wdqjmz74avgbz-nss-cacert-3.123",
+              "default": true
+            },
+            {
+              "name": "hashed",
+              "path": "/nix/store/q5zjbsrsh8y1qyb1sg49afr4cabwadid-nss-cacert-3.123-hashed"
+            },
+            {
+              "name": "p11kit",
+              "path": "/nix/store/7rnchgjgshxhiqwjv9pnc40pkmn5nd36-nss-cacert-3.123-p11kit"
+            },
+            {
+              "name": "unbundled",
+              "path": "/nix/store/d0rjwf1jmq3j93hiwa0diiiia95097nd-nss-cacert-3.123-unbundled"
+            }
+          ],
+          "store_path": "/nix/store/xig2alhf611w1pan6n4wdqjmz74avgbz-nss-cacert-3.123"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/07xdbx75iszxrf8p2fshxld6xgmmp3wp-nss-cacert-3.123",
+              "default": true
+            },
+            {
+              "name": "hashed",
+              "path": "/nix/store/m6gsz69i0sj0hdrmwadna7pn67cknm30-nss-cacert-3.123-hashed"
+            },
+            {
+              "name": "p11kit",
+              "path": "/nix/store/bg1cgzc3fvh1i8z2lszcw6zmkj80slhj-nss-cacert-3.123-p11kit"
+            },
+            {
+              "name": "unbundled",
+              "path": "/nix/store/bm2jpwk0j0ifizv85mpgncp1m978pjsf-nss-cacert-3.123-unbundled"
+            }
+          ],
+          "store_path": "/nix/store/07xdbx75iszxrf8p2fshxld6xgmmp3wp-nss-cacert-3.123"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/vbqw87rjbi52haxz1zvqnlzxmq1w8fmi-nss-cacert-3.123",
+              "default": true
+            },
+            {
+              "name": "p11kit",
+              "path": "/nix/store/kbm80msg6879jz9c8w1sv7z3xr9wi55k-nss-cacert-3.123-p11kit"
+            },
+            {
+              "name": "unbundled",
+              "path": "/nix/store/1gmdddjsfyddl7jzv19gkkvsck25n0zm-nss-cacert-3.123-unbundled"
+            },
+            {
+              "name": "hashed",
+              "path": "/nix/store/hm7yrgvbrrzyq968rb6c054rd82d2nh5-nss-cacert-3.123-hashed"
+            }
+          ],
+          "store_path": "/nix/store/vbqw87rjbi52haxz1zvqnlzxmq1w8fmi-nss-cacert-3.123"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zdl7dn1gmi1cxdw5a8hw6xsf4cz0rjmg-nss-cacert-3.123",
+              "default": true
+            },
+            {
+              "name": "hashed",
+              "path": "/nix/store/lv8v2lynj51zbnimqs16q4yvf1d6iysa-nss-cacert-3.123-hashed"
+            },
+            {
+              "name": "p11kit",
+              "path": "/nix/store/c3p2kzczdl0m4ahglf58f58np7ic7cby-nss-cacert-3.123-p11kit"
+            },
+            {
+              "name": "unbundled",
+              "path": "/nix/store/0v7a1zv0rcip6xbq6lsky4bl1z0bf72c-nss-cacert-3.123-unbundled"
+            }
+          ],
+          "store_path": "/nix/store/zdl7dn1gmi1cxdw5a8hw6xsf4cz0rjmg-nss-cacert-3.123"
+        }
+      }
+    },
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2026-06-23T00:43:55Z",
+      "resolved": "github:NixOS/nixpkgs/89570f24e97e614aa34aa9ab1c927b6578a43775?lastModified=1782175435&narHash=sha256-EMzXKmnOtBQ2MnvpiNOm7E%2BkOMvdPrIKaeg52Tip2Uk%3D"
+    },
+    "nodejs@24": {
+      "last_modified": "2025-12-27T12:56:01Z",
+      "plugin_version": "0.0.4",
+      "resolved": "github:NixOS/nixpkgs/3edc4a30ed3903fdf6f90c837f961fa6b49582d1#nodejs_24",
+      "source": "devbox-search",
+      "version": "24.12.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/b1h0af3yb3z9jz048phclcqw6ihiww67-nodejs-24.12.0",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/ksn4nj0nbp0ikmh4scy9x4biqqdswwhy-nodejs-24.12.0-dev"
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/3x72bm7l30ib7l7cximrp0sklcq8jqwy-nodejs-24.12.0-libv8"
+            }
+          ],
+          "store_path": "/nix/store/b1h0af3yb3z9jz048phclcqw6ihiww67-nodejs-24.12.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/9jfsyhcr9c6rpm94lrkibv75jkggvwss-nodejs-24.12.0",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/7izhv9x1yvsmyrhmmyps6bxjjclajm80-nodejs-24.12.0-dev"
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/8hl74pnc1qyz68rg10ixw7fz32hcxqkk-nodejs-24.12.0-libv8"
+            }
+          ],
+          "store_path": "/nix/store/9jfsyhcr9c6rpm94lrkibv75jkggvwss-nodejs-24.12.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/cj1243xswxvnwgifyiyg8axhn0r2vl48-nodejs-24.12.0",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/kzia3rkaf9vwpn3py23q9v49jpjm6zx7-nodejs-24.12.0-dev"
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/xszji81xj7ghjhz7jk0jkhb84nfwyd8f-nodejs-24.12.0-libv8"
+            }
+          ],
+          "store_path": "/nix/store/cj1243xswxvnwgifyiyg8axhn0r2vl48-nodejs-24.12.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/9z1v3wyrxp6fpyzw21lcakd5w7aknzyc-nodejs-24.12.0",
+              "default": true
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/5yvx909wlis13qd2y1ahwl7ij21ma69a-nodejs-24.12.0-libv8"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/7ll99p08gmpg0n048669p80zjibl5akr-nodejs-24.12.0-dev"
+            }
+          ],
+          "store_path": "/nix/store/9z1v3wyrxp6fpyzw21lcakd5w7aknzyc-nodejs-24.12.0"
+        }
+      }
+    },
+    "process-compose@latest": {
+      "last_modified": "2026-06-27T07:37:20Z",
+      "resolved": "github:NixOS/nixpkgs/3d46470bb3030020f7e1361f33514854f5bfa86d#process-compose",
+      "source": "devbox-search",
+      "version": "1.116.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/xwh2w75ig3bf25sw41vwnf5b1cc9hp7p-process-compose-1.116.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/xwh2w75ig3bf25sw41vwnf5b1cc9hp7p-process-compose-1.116.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2adglgmmv1klc7msv2nyx3j62xkikz9a-process-compose-1.116.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/2adglgmmv1klc7msv2nyx3j62xkikz9a-process-compose-1.116.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zlsj3gcnnm1f49gdwri5c4l3qsyxzx3y-process-compose-1.116.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/zlsj3gcnnm1f49gdwri5c4l3qsyxzx3y-process-compose-1.116.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/7w3p9gy8jqjzj0bzj5clc0csdwrp9qnn-process-compose-1.116.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/7w3p9gy8jqjzj0bzj5clc0csdwrp9qnn-process-compose-1.116.0"
+        }
+      }
+    }
+  }
+}

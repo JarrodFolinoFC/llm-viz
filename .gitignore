@@ -1,0 +1,56 @@
+node_modules/
+dist/
+
+*storybook.log
+storybook-static
+
+# AWS credentials — never commit
+*.env.local
+.env
+shared_infra/aws-creds.sh
+shared_infra/creds/*.sh
+
+# Terraform — never commit state or local provider/plugin dirs.
+# (Do commit .terraform.lock.hcl so provider versions are pinned.)
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# OpenObserve local data dir (scripting/observability) — regenerated on boot
+scripting/observability/.data/
+
+# DynamoDB Local (scripting/reminders_api) — the downloaded jar + its native libs
+# (fetched by install.sh) and the persistent local table data dir
+scripting/reminders_api/.ddb/
+scripting/reminders_api/.data/
+
+# SuperTokens Core (local auth) — the downloaded Core package + bundled JRE +
+# runtime jars fetched by backend/auth/install.sh; in-memory DB, nothing to persist
+backend/auth/.core/
+
+# Jenkins mutable state (local CI server, ci/) — config/jobs are seeded from
+# the committed ci/jenkins/init.groovy.d on every boot
+ci/jenkins/home/
+# Generated CI outputs (e.g. the dry-review markdown reports), archived as build
+# artifacts, not committed
+ci/artifacts/
+
+# westpac_analyzer latest.json — regenerated mirror of the newest parse (DAG output)
+scripting/westpac_analyzer/latest.json
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Turborepo local cache
+.turbo/
+**/.turbo/
+
+# Module Federation build/diagnostic artifacts (per-app, regenerated on build)
+**/.mf/
+**/@mf-types/
+
+# dynamodb-admin (local DynamoDB web UI) — standalone install, not in the workspace
+devbox_support/dynamodb-admin/node_modules/

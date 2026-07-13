@@ -1,0 +1,120 @@
+/* The overlay surface. Rendered as custom content inside an AntD Dropdown popup,
+   so it paints its own card (background / border / shadow) rather than antd's. */
+.menu {
+  min-width: 208px;
+  padding: 4px;
+  background: var(--c-bg-surface, #ffffff);
+  border: 1px solid var(--c-border-default, #dddddd);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--c-text-primary, #0f172a);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.row:hover,
+.row:focus-visible {
+  background: var(--c-bg-subtle, #f6f8fa);
+  outline: none;
+}
+
+.danger {
+  color: var(--c-negative, #dd3355);
+}
+
+.danger:hover,
+.danger:focus-visible {
+  background: var(--c-error-bg, #fee2e2);
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* A disabled row stays inert on hover — no highlight, no pointer affordance. */
+.disabled:hover,
+.disabled:focus-visible {
+  background: transparent;
+}
+
+/* The always-visible accelerator: a lit monospace key cap in a reserved slot —
+   the resting-state cousin of the vim hint slot, so every action's label is
+   "ready to press" the moment the menu opens. */
+.key {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 1.7em;
+  height: 1.5em;
+  padding: 0 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--vim-hint-accent, #2563eb);
+  border: 1px solid var(--c-border-default, #dddddd);
+  border-radius: 4px;
+}
+
+.icon {
+  flex: none;
+  display: inline-flex;
+  font-size: 16px;
+  color: var(--c-text-secondary, #555555);
+}
+
+.danger .icon {
+  color: inherit;
+}
+
+.text {
+  flex: 1 1 auto;
+  /* Label sits almost as tall as the ⋮ trigger glyph (fontSize 22). */
+  font-size: 20px;
+}
+
+.divider {
+  height: 1px;
+  margin: 4px 6px;
+  background: var(--c-border-default, #dddddd);
+}
+
+/* A titled section: an uppercase heading over its grouped rows. */
+.group + .group {
+  margin-top: 2px;
+}
+
+.groupHeading {
+  padding: 6px 10px 3px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--c-text-secondary, #555555);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row {
+    transition: none;
+  }
+}

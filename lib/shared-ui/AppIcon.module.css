@@ -1,0 +1,47 @@
+/* Interactive AppIcon (given onClick/href) — a borderless hit area around the
+   glyph, `position:relative` so the corner vim hint badge anchors to it. The
+   decorative form renders a bare glyph with none of this. */
+.interactive {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  line-height: 0;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.interactive:focus-visible {
+  outline: 2px solid var(--c-link, #2563eb);
+  outline-offset: 2px;
+}
+
+/* The icon keeps its own shape (faded) in hint mode so you recognise what you're
+   triggering, with the centered letters inside it. */
+.iconFrame {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glyph {
+  display: inline-flex;
+  transition: opacity 0.12s ease;
+}
+
+.dimGlyph {
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconFrame,
+  .glyph {
+    transition: none;
+  }
+}

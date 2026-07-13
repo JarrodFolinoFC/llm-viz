@@ -1,0 +1,126 @@
+/* Print stylesheet for llm-trainer.
+ *
+ * Goal: a clean white-page handout of the current page's panels. The app's
+ * chrome (sidebar nav, floating dock, stage filter, per-row action buttons,
+ * overlays) is hidden; dark mode is forced back to the light palette so it reads
+ * on paper and doesn't flood the page with ink — while the *semantic* colours
+ * (the green/red heatmap cells, the token chips) are preserved via
+ * print-color-adjust.
+ *
+ * Implementation note: most component internals use hashed CSS-module class
+ * names that a global sheet can't target, so they opt in with the stable
+ * `.no-print` class. The theme/surface/page rules below ride on the design-token
+ * CSS variables and antd's own stable classes.
+ */
+@media print {
+  /* 1) Force the light palette regardless of the on-screen theme. The dark
+     values come from `:root[data-theme="dark"]`; re-declare every token to its
+     light value. `!important` also beats any per-token inline override applied
+     to <html> by the colour picker. (Mirrors shared-ui's light palette.) */
+  :root,
+  :root[data-theme='dark'] {
+    --c-text-primary: #0f172a !important;
+    --c-text-secondary: #555555 !important;
+    --c-text-muted: #9ca3af !important;
+    --c-text-inverse: #ffffff !important;
+    --c-text-on-dark: #e2e8f0 !important;
+    --c-text-emphasis: #0c4a6e !important;
+    --c-bg-page: #ffffff !important;
+    --c-bg-surface: #ffffff !important;
+    --c-bg-subtle: #f6f8fa !important;
+    --c-bg-disabled: #e5e7eb !important;
+    --c-border-default: #dddddd !important;
+    --c-border-emphasis: #000000 !important;
+    --c-border-strong: #cccccc !important;
+    --c-positive: #22aa77 !important;
+    --c-negative: #dd3355 !important;
+    --c-info-fg: #0369a1 !important;
+    --c-info-bg: #f0f9ff !important;
+    --c-info-border: #bae6fd !important;
+    --c-warning-fg: #92400e !important;
+    --c-warning-bg: #fffbeb !important;
+    --c-warning-border: #fcd34d !important;
+    --c-success-fg: #15803d !important;
+    --c-success-bg: #dcfce7 !important;
+    --c-success-border: #bbf7d0 !important;
+    --c-error-fg: #b91c1c !important;
+    --c-error-bg: #fee2e2 !important;
+    --c-error-border: #fecaca !important;
+    --c-highlight: #f59e0b !important;
+    --c-emphasis: #000000 !important;
+    --c-highlight-bg: #fde68a !important;
+    --c-chip-next-bg: #bae6fd !important;
+    --c-chip-next-fg: #0c4a6e !important;
+    --c-chip-prev-bg: #fde68a !important;
+    --c-chip-prev-fg: #92400e !important;
+  }
+
+  /* 2) Print every background/colour as authored (heatmap cells, token chips). */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 3) White surfaces. antd's Card/Layout backgrounds come from its dark CSS-in-JS
+     tokens, so force them white. Backgrounds are safe to force here because the
+     heatmap cells set their own inline background on the <td>, not on these. */
+  html,
+  body,
+  #root,
+  .ant-layout,
+  .ant-layout-content,
+  .ant-card,
+  .ant-card-head,
+  .ant-card-body {
+    background: #ffffff !important;
+  }
+
+  /* Dark default text for antd chrome that doesn't use our tokens (card titles,
+     plain table numbers). `!important` only on the title (no inline colours
+     there); table text stays a plain rule so NumericCell's inline, now-light
+     colour still wins and the green/red numbers survive. */
+  .ant-card-head,
+  .ant-card-head-title {
+    color: #0f172a !important;
+  }
+  .ant-card-body,
+  table,
+  th,
+  td {
+    color: #0f172a;
+  }
+
+  /* Form controls (e.g. the inference token selectors) keep antd's dark token
+     background otherwise — whiten them so the chosen input reads on paper. */
+  .ant-select-selector,
+  .ant-input,
+  .ant-input-number,
+  .ant-btn,
+  .ant-segmented {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #dddddd !important;
+  }
+
+  /* 4) Hide app chrome: marked elements + antd nav/dock/overlay containers. */
+  .no-print,
+  .ant-layout-sider,
+  .ant-drawer,
+  .ant-drawer-root,
+  .ant-float-btn-group,
+  .ant-modal-root,
+  .ant-modal-mask,
+  .ant-tooltip,
+  .ant-popover,
+  .ant-message,
+  .ant-notification {
+    display: none !important;
+  }
+
+  /* 5) Let panels print whole and look flat (no screen shadows). */
+  .ant-card {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #dddddd !important;
+  }
+}

@@ -1,0 +1,90 @@
+/* Web flow layout: pipeline rows, grouped columns and the shared-track grid.
+   The classes here replace the old antd-Flex-based flow CSS — the renderer
+   owns what a "row" is, so the selectors target its own flowRow/flowCol. */
+
+.flowRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flowCol {
+  display: flex;
+  flex-direction: column;
+}
+
+/* A column-aligned grid section: the tracks (set inline, `max-content` each)
+   are shared by every row, so corresponding cells line up across rows. Wider
+   than the viewport it scrolls sideways rather than squashing the panels. */
+.flowGrid {
+  display: grid;
+  justify-content: start;
+  overflow-x: auto;
+}
+
+.gridSpan {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+/* An arrow occupying its own grid track: flex so the arrow centres against
+   the row's panels (a plain block cell would pin it to the top). */
+.gridArrowCell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Arrangement — how the flow lays its panels out (the "Arrangement" view
+   option). Driven off `data-arrangement` on the surface wrapper, so one
+   setting reflows every model's flow. `stage` (rows per training phase) is
+   the CSS default and needs no rules. `vertical` is the phones' default.
+   ───────────────────────────────────────────────────────────────────────── */
+.arrange {
+  display: block;
+}
+
+/* ── Vertical: one panel per row. The rows already carry `align-items:
+   stretch`, so panels go full-width; arrows land on their own line (the
+   headless arrow renders ↓ there). ── */
+[data-arrangement='vertical'] .stageRow {
+  flex-direction: column;
+}
+[data-arrangement='vertical'] .flowGrid {
+  display: flex;
+  flex-direction: column;
+}
+[data-arrangement='vertical'] .flowGrid > *,
+[data-arrangement='vertical'] .stageRow > * {
+  min-width: 0;
+}
+
+/* ── Collapsed: every stage row joined into one continuous wrapping flow. The
+   flow's root container becomes a wrap row, and each inner stage row dissolves
+   (`display: contents`) so its panels join that wrap. Grouped columns
+   (.flowCol — the companion note/panel/JS stacks) keep their shape. ── */
+[data-arrangement='collapsed'] > .stageRow {
+  display: flex;
+  flex-flow: row wrap;
+}
+[data-arrangement='collapsed'] .stageRow .stageRow,
+[data-arrangement='collapsed'] .stageRow:not(:first-child) {
+  display: contents;
+}
+[data-arrangement='collapsed'] .flowGrid {
+  display: flex;
+  flex-flow: row wrap;
+}
+[data-arrangement='collapsed'] .gridSpan {
+  display: contents;
+}
+
+/* Phones: let wide panels shrink to the column width so their tables scroll
+   internally rather than forcing horizontal page overflow (applies whatever
+   the arrangement — the default there is `vertical` anyway). */
+@media (max-width: 991px) {
+  .flowGrid > *,
+  .flowRow > * {
+    min-width: 0;
+  }
+}

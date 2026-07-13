@@ -1,0 +1,56 @@
+/* A borderless icon button — subtle hover, rounded hit area. `position:relative`
+   anchors the corner vim hint badge. Theme-var colours with literal fallbacks so
+   it works without the ThemeProvider (llm-trainer). */
+.iconButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--c-text-primary, #0f172a);
+  cursor: pointer;
+  line-height: 0;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+.iconButton:hover:not(:disabled) {
+  background: var(--c-bg-subtle, #f1f5f9);
+}
+
+.iconButton:focus-visible {
+  outline: 2px solid var(--c-link, #2563eb);
+  outline-offset: 1px;
+}
+
+.iconButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* The icon keeps its own shape (faded) in hint mode so you recognise what you're
+   triggering, with the centered letters inside it. */
+.iconFrame {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glyph {
+  display: inline-flex;
+  transition: opacity 0.12s ease;
+}
+
+.dimGlyph {
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconFrame,
+  .glyph {
+    transition: none;
+  }
+}

@@ -1,0 +1,100 @@
+.layout {
+  min-height: 100vh;
+}
+
+/* Ant Design Menu: drop the default inline-end divider. */
+.menu {
+  border-inline-end: 0;
+}
+
+/* Two glyphs (model + representation) packed into a single menu-item icon slot. */
+.navIcons {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.navColumn {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Sticky top bar: nav toggle + app title on the left, GitHub link on the right. */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  height: 48px;
+  padding: 0 var(--space-md);
+  background: var(--c-bg-surface);
+  border-bottom: 1px solid var(--c-border-default);
+}
+
+.menuButton {
+  border: 0;
+  background: transparent;
+  color: var(--c-text-primary);
+  font-size: 1.4rem;
+  line-height: 1;
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.appTitle {
+  font-size: var(--font-size-base);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* The title doubles as the home link — keep it looking like a heading. */
+.titleLink {
+  color: inherit;
+}
+
+.titleLink:hover {
+  color: var(--c-info-fg);
+}
+
+.githubLink {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  color: var(--c-text-primary);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.githubLink:hover {
+  color: var(--c-info-fg);
+}
+
+/* Sidebar, fully hidden/shown via the header hamburger or Ctrl+H. */
+.sider {
+  border-right: 1px solid var(--c-border-default);
+}
+
+/* Hidden (zero-width) sidebar: no border, or a 1px line lingers. */
+.sider:global(.ant-layout-sider-collapsed) {
+  border-right: 0;
+}
+
+/* Keep both glyphs a fixed size so they read as a pair, not one big icon. */
+.navIcons :global(.anticon) {
+  font-size: 14px;
+}
+
+.siderTitle {
+  padding: var(--space-md) var(--space-lg);
+}
+
+.content {
+  padding: var(--space-lg);
+  padding-bottom: 4rem;
+}

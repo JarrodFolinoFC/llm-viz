@@ -1,0 +1,26 @@
+/* The 8 W[c] slice panels as a fixed 4×2 grid — one row of four per tensor
+   half. Rendered as a .flowCol (vertical flex node), so the collapsed
+   arrangement doesn't dissolve it into the page-wide wrap; the grid, not the
+   viewport, decides the 4-up. The tables inside compact themselves via the
+   CSS vars MatrixTable already reads, so eight V×V heatmaps fit abreast. */
+.slices {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  overflow-x: auto;
+  max-width: 100%;
+  --font-size-md: 10px;
+  --space-xs: 2px;
+  --space-sm: 3px;
+}
+
+@media (max-width: 1500px) {
+  .slices {
+    grid-template-columns: repeat(2, max-content);
+  }
+}
+
+@media (max-width: 700px) {
+  .slices {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,89 @@
+/* Horizontal scroll wrapper: keeps wide matrices (e.g. the MLP's H×V output
+   weights) scrollable inside their panel instead of overflowing the viewport. */
+.scroll {
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* When printing, don't trap wide matrices in a scrollbox — let the whole table
+   lay out so it all lands on the page. */
+@media print {
+  .scroll {
+    overflow-x: visible;
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  font-family: monospace;
+  font-size: var(--font-size-md);
+}
+
+.headRow {
+  color: var(--c-text-secondary);
+}
+
+/* Shared cell box (header + body). Defaults to right-aligned numbers; the
+   rowHeading modifier left-aligns token labels. Per-cell colors are applied
+   inline by the consumer's style hooks. */
+.cell {
+  padding: var(--space-xs) var(--space-sm);
+  text-align: right;
+  vertical-align: top;
+}
+
+.rowHeading {
+  text-align: left;
+}
+
+.actionCell {
+  text-align: center;
+  width: 1%;
+  white-space: nowrap;
+}
+
+.row {
+  transition: background-color 0.2s;
+}
+
+.rowHighlighted {
+  font-weight: bold;
+}
+
+/* Rows that open a per-row worked-calculation modal on click. */
+.rowClickable {
+  cursor: pointer;
+}
+
+.rowClickable:focus-visible {
+  outline: 2px solid var(--c-text-emphasis, #1677ff);
+  outline-offset: -2px;
+}
+
+/* Summary row beneath the body, separated by a top border. */
+.rollupRow {
+  font-weight: bold;
+  border-top: 1px solid var(--c-border-strong);
+}
+
+/* Phones: compact the tables so more fits before the panel needs to scroll
+   horizontally, and surface a thin scrollbar as a swipe affordance. */
+@media (max-width: 991px) {
+  .table {
+    font-size: 11px;
+  }
+  .cell {
+    padding: 2px 4px;
+  }
+  .scroll {
+    scrollbar-width: thin;
+  }
+  .scroll::-webkit-scrollbar {
+    height: 5px;
+  }
+  .scroll::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.4);
+    border-radius: 3px;
+  }
+}
