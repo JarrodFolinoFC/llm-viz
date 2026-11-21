@@ -4,5 +4,6 @@
     "cacert":          "latest",
     "nodejs":          "24",
     "process-compose": "latest",
+    "jq":              "latest"
   }
 }

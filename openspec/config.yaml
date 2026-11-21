@@ -1,0 +1,22 @@
+schema: spec-driven
+
+# Project context — shown to AI when creating artifacts.
+context: |
+  Tech stack: TypeScript, React 18, Vite, Ant Design 5, react-router-dom.
+  Visualizations: Plotly (gl3d), KaTeX for math, Mermaid for diagrams.
+  Vendored libs (mlblocks, shared-ui) live in src/lib/ via Vite aliases — don't add npm packages for those.
+  Testing: Vitest + Testing Library; Storybook for shared components.
+  Conventions: conventional commits, CSS modules, theme tokens in src/theme/.
+  Deployment: static GitHub Pages build with a base path — no backend, everything client-side.
+  Domain: machine learning education — interactive visualizations teaching LLM/transformer concepts.
+  Audience: learners; favor clarity and progressive disclosure. Mobile responsiveness matters.
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
